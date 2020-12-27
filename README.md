@@ -11,7 +11,7 @@ https://github.com/burks10/Arduino-SNES-Controller
 
 I created that code to be able to connect some 8bitdo awesome wireless controllers to my 
 NEO GEO MVS1B which I was consolizing. Also the goal was not only to connect wireless controllers
-to arcade board but also implement turbo fire buttons, DIP switches wireless control and some 
+to arcade board but also implement Turbo Fire buttons, DIP switches wireless control and some 
 more interesting things.
 
 Some short notes and pictures you can see below.

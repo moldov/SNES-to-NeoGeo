@@ -5,10 +5,10 @@ This is an Arduino project which allows you to interface a SNES or Super Famicom
 (or a clone) to a NEO GEO style DB15 connector.
 
 based on Robin Edwards code found at 
-```
+
 https://github.com/robinhedwards/SNES-to-NeoGeo
 https://github.com/burks10/Arduino-SNES-Controller
-```
+
 with some additions.
 
 I created that code to be able to connect some 8bitdo awesome wireless controllers to my 

@@ -73,7 +73,7 @@ This shows a completed project on a cheap Arduino Pro Mini (5v) clone wired up t
 socket and female DB15 for easy connections. Also Arduino is connected to the board as per 
 diagram listed above.
 
-SNES female controller and DB15 sockets, SSD1306　Screen and Arduino Mini are available on eBay of AliExpress for a couple of bucks.
+SNES female controller and DB15 sockets, SSD1306 Screen and Arduino Mini are available on eBay of AliExpress for a couple of bucks.
 
 SNES Controller -> Arduino
 --------------------------

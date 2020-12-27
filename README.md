@@ -1,23 +1,46 @@
-SNES to Neo Geo
+ SNES to NEO-GEO
 ===============
 
 This is an Arduino project which allows you to interface a SNES or Super Famicom controller
-(or a clone) to a Neo Geo style DB15 connector.
+(or a clone) to a NEO GEO style DB15 connector.
 
-I created this for my CMVS project (consolizing a MVS Neo Geo arcade motherboard), and I had
-some nice, working SNES controllers that I wanted to use. SNES controllers are quite a good fit
-for the Neo Geo because the button colours match (well, except on the purple USA ones!).
+based on Robin Edwards code found at 
+https://github.com/robinhedwards/SNES-to-NeoGeo
+https://github.com/burks10/Arduino-SNES-Controller
+with some additions.
 
-It looked easy enough to rewire the controllers and attach a new socket, but I wanted something
-that left them in their original state so I could still use them on my SNES.
+I created that code to be able to connect some 8bitdo awesome wireless controllers to my 
+NEO GEO MVS1B which I was consolizing. Also the goal was not only to connect wireless controllers
+to arcade board but also implement turbo fire buttons, dip switch wireless control and some 
+more interesting things.
 
-![Image](ProMini.jpg?raw=true)
+Some short notes and pictures you can see below.
+
+To consolize my MVS I was referring to this site
+http://www.jamma-nation-x.com/jammax/cmvs.html
+
+To connect Arduino and DB15 joystick ports I was reffering to that thread on neo-geo.com
+http://www.neo-geo.com/forums/showthread.php?236280-Info-Consolized-MV1B-Controller-points-on-the-bottom-of-the-board 
+
+![Image](mv1b_controller_pinout.jpg?raw=true)
+
+During consolizing I decided to keep the original case as a whole thing because I hate to cut any
+holes on the original consoles. So I was using pieces of black plastic to be able to fit all the 
+power and RGB sockets along with SNES, DB15 joystick sockets and screen. Two Arduino's were used where 
+the one board is main and has screen and DIP switches connected. During power up you can see SNK Logo 
+on the screen 
+
+![Image](SNKLogo.jpg?raw=true)
+
+and after couple of seconds it starts showing status of DIP Switches and Turbo Fire status
+
+![Image](DIPState.jpg?raw=true)
 
 This shows a completed project on a cheap Arduino Pro Mini (5v) clone wired up to a SNES female
-socket and female DB15 for easy connections.
+socket and female DB15 for easy connections. Also Arduino is connected to the board as per 
+diagram listed above.
 
-SNES female controller sockets are available on eBay for a couple of pounds, and a Pro Mini
-clone costs about the same, so the total cost of the project is only about five pounds.
+SNES female controller and DB15 sockets, SSD1306　Screen and Arduino Mini are available on eBay of AliExpress for a couple of bucks.
 
 SNES Controller -> Arduino
 --------------------------
@@ -61,19 +84,26 @@ Arduino -> DB15
  4 (D)         D11
 ```
 
-3d printed case
----------------
+SNES gamepad button combinations
 
-I've designed a simple box for the device that can be 3d printed. It fits the Pro Mini inside
-along with the SNES socket and a cable grip for a DB15 cable.
+SELECT + START - Pause mode (DIP_SWITCH 8) - Disabled after UNIBIOS installation
+SELECT + A + X - Test mode (DIP_SWITCH 1)
+SELECT + B + Y - Freeplay mode (DIP_SWITCH 7)
+L_SHIFT and START - I made them equal because if you use 8Bitdo and holding start more than 5sec 
+contoller being powered down, so I dublicated START to L_SHIFT. It allows to reset console if  
+You play famous Banana 161 in 1 chineese game cartridge by holding L_SHIFT about 5~10 seconds
+SELECT + any of A, B, X OR Y - Autofire mode - switch on/off them in autofire mode
 
-The case is designed to fit a cable grip extracted from a UK mains plug (with 16mm spacing between
-the grip screws).
+DIP Switches connections
 
-The STL files are included here along with the source SCAD files if you need to make any tweaks to
-the design.
+DIP Pin  ->  Arduino
+--------     -------
+TEST_MODE       13
+FREE_PLAY       A3
+PIN_PAUSE       12
 
-![Image](3dPrint.jpg?raw=true)
+![Image](DIPSwitches.jpg?raw=true)
 
-![Image](3dPrint2.jpg?raw=true)
+![Image](Front.jpg?raw=true)
 
+![Image](Back.jpg?raw=true)

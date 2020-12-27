@@ -6,7 +6,7 @@ This is an Arduino project which allows you to interface a SNES or Super Famicom
 
 based on Robin Edwards code found at 
 
-https://github.com/robinhedwards/SNES-to-NeoGeo
+https://github.com/robinhedwards/SNES-to-NeoGeo and 
 https://github.com/burks10/Arduino-SNES-Controller
 
 with some additions.
@@ -29,8 +29,9 @@ http://www.neo-geo.com/forums/showthread.php?236280-Info-Consolized-MV1B-Control
 During consolizing I decided to keep the original case as a whole thing because I hate to cut any
 holes on the original consoles. So I was using pieces of black plastic to be able to fit all the 
 power and RGB sockets along with SNES, DB15 joystick sockets and screen. Two Arduino's were used where 
-the one board is main and has screen and DIP switches connected. During power up you can see SNK Logo 
-on the screen
+the one board is main and has screen and DIP switches connected. 
+
+During power up you can see SNK Logo on the screen
 
 
 ![Image](SNKLogo.jpg?raw=true)

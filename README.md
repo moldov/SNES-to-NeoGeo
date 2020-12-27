@@ -13,7 +13,7 @@ with some additions.
 
 I created that code to be able to connect some 8bitdo awesome wireless controllers to my 
 NEO GEO MVS1B which I was consolizing. Also the goal was not only to connect wireless controllers
-to arcade board but also implement turbo fire buttons, dip switch wireless control and some 
+to arcade board but also implement turbo fire buttons, DIP switches wireless control and some 
 more interesting things.
 
 Some short notes and pictures you can see below.
@@ -44,7 +44,32 @@ and after couple of seconds it starts showing status of DIP Switches and Turbo F
 
 ![Image](DIPState.jpg?raw=true)
 
+DIP switches and Turbo Fire can be swithced on/off with joystick buttons combination listed below.
 
+SNES gamepad button combinations
+```
+SELECT + START - Pause mode (DIP_SWITCH 8) - Disabled after UNIBIOS installation
+SELECT + A + X - Test mode (DIP_SWITCH 1)
+SELECT + B + Y - Freeplay mode (DIP_SWITCH 7)
+L_SHIFT and START - I made them equal because if you use 8Bitdo and holding start more than 5sec 
+contoller being powered down, so I dublicated START to L_SHIFT. It allows to reset console if  
+You play famous Banana 161 in 1 chineese game cartridge by holding L_SHIFT about 5~10 seconds
+SELECT + any of A, B, X OR Y - Autofire mode - switch on/off them in autofire mode
+```
+DIP Switches connections
+```
+DIP Pin  ->  Arduino
+--------     -------
+TEST_MODE       13
+FREE_PLAY       A3
+PIN_PAUSE       12
+```
+
+
+
+![Image](DIPSwitches.jpg?raw=true)
+
+DIPSwitches connection
 
 This shows a completed project on a cheap Arduino Pro Mini (5v) clone wired up to a SNES female
 socket and female DB15 for easy connections. Also Arduino is connected to the board as per 
@@ -94,30 +119,6 @@ Arduino -> DB15
  4 (D)         D11
 ```
 
-SNES gamepad button combinations
-```
-SELECT + START - Pause mode (DIP_SWITCH 8) - Disabled after UNIBIOS installation
-SELECT + A + X - Test mode (DIP_SWITCH 1)
-SELECT + B + Y - Freeplay mode (DIP_SWITCH 7)
-L_SHIFT and START - I made them equal because if you use 8Bitdo and holding start more than 5sec 
-contoller being powered down, so I dublicated START to L_SHIFT. It allows to reset console if  
-You play famous Banana 161 in 1 chineese game cartridge by holding L_SHIFT about 5~10 seconds
-SELECT + any of A, B, X OR Y - Autofire mode - switch on/off them in autofire mode
-```
-DIP Switches connections
-```
-DIP Pin  ->  Arduino
---------     -------
-TEST_MODE       13
-FREE_PLAY       A3
-PIN_PAUSE       12
-```
-
-
-
-![Image](DIPSwitches.jpg?raw=true)
-
-DIPSwitches connection
 
 
 ![Image](Front.jpg?raw=true)

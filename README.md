@@ -28,13 +28,20 @@ During consolizing I decided to keep the original case as a whole thing because 
 holes on the original consoles. So I was using pieces of black plastic to be able to fit all the 
 power and RGB sockets along with SNES, DB15 joystick sockets and screen. Two Arduino's were used where 
 the one board is main and has screen and DIP switches connected. During power up you can see SNK Logo 
-on the screen 
+on the screen
+
 
 ![Image](SNKLogo.jpg?raw=true)
 
+
+
 and after couple of seconds it starts showing status of DIP Switches and Turbo Fire status
 
+
+
 ![Image](DIPState.jpg?raw=true)
+
+
 
 This shows a completed project on a cheap Arduino Pro Mini (5v) clone wired up to a SNES female
 socket and female DB15 for easy connections. Also Arduino is connected to the board as per 
@@ -85,7 +92,7 @@ Arduino -> DB15
 ```
 
 SNES gamepad button combinations
-
+```
 SELECT + START - Pause mode (DIP_SWITCH 8) - Disabled after UNIBIOS installation
 SELECT + A + X - Test mode (DIP_SWITCH 1)
 SELECT + B + Y - Freeplay mode (DIP_SWITCH 7)
@@ -93,17 +100,24 @@ L_SHIFT and START - I made them equal because if you use 8Bitdo and holding star
 contoller being powered down, so I dublicated START to L_SHIFT. It allows to reset console if  
 You play famous Banana 161 in 1 chineese game cartridge by holding L_SHIFT about 5~10 seconds
 SELECT + any of A, B, X OR Y - Autofire mode - switch on/off them in autofire mode
-
+```
 DIP Switches connections
-
+```
 DIP Pin  ->  Arduino
 --------     -------
 TEST_MODE       13
 FREE_PLAY       A3
 PIN_PAUSE       12
+```
+
+
 
 ![Image](DIPSwitches.jpg?raw=true)
+DIPSwitches connection
+
 
 ![Image](Front.jpg?raw=true)
+Front panel
 
 ![Image](Back.jpg?raw=true)
+Back panel
